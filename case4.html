@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case4</title>
+    <link rel="stylesheet" href="lib/normalize.css">
+    <style>
+        div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 0;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: transparent;
+            border: 2px solid red;
+            animation: water_drop;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        @keyframes water_drop {
+            from{
+                width: 0;
+            }
+            to{
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
