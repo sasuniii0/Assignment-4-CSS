@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case1</title>
+    <link rel="stylesheet" href="lib/fontawesome/css/all.css">
+    <link rel="stylesheet" href="lib/normalize.css">
+
+    <style>
+        nav{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: fit-content;
+        }
+
+        nav>div{
+            display: flex;
+            width: 150px;
+            padding: 10px;
+            color: white;
+            margin-left: -130px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            justify-content: space-between;
+            background-color: purple;
+            transition-duration:1s ;
+            box-shadow: 2px 2px 2px 2px #43285c;
+        }
+        div:hover{
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div>Menu One<i class="fas fa-home"></i></div>
+    <div>Menu two<i class="fas fa-truck"></i></div>
+    <div>Menu three<i class="fas fa-network-wired"></i></div>
+    <div>Menu four<i class="fas fa-bolt"></i></div>
+    <div>Menu five<i class="fas fa-magnet"></i></div>
+</nav>
+<script src="lib/fontawesome/js/all.js"></script>
+</body>
+</html>
