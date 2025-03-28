@@ -10,28 +10,34 @@
               top: 0;
               left: 0;
               transform: rotate(0deg);
+              background: red; /* Color at start */
           }
           25% {
               top: 0;
               left: calc(var(--section-width) - var(--div-width));
               transform: rotate(90deg);
+              background: blue; /* Color at 25% */
           }
           50% {
               top: calc(var(--section-height) - var(--div-height));
               left: calc(var(--section-width) - var(--div-width));
               transform: rotate(180deg);
+              background: green; /* Color at 50% */
           }
           75% {
               top: calc(var(--section-height) - var(--div-height));
               left: 0;
               transform: rotate(270deg);
+              background: yellow; /* Color at 75% */
           }
           100% {
               top: 0;
               left: 0;
               transform: rotate(360deg);
+              background: red; /* Back to start color */
           }
       }
+
 
       :root {
           --section-width: 100vw;
