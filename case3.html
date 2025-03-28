@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case3</title>
+    <link rel="stylesheet" href="lib/normalize.css">
+  <style>
+      @keyframes round {
+          0% {
+              top: 0;
+              left: 0;
+              transform: rotate(0deg);
+          }
+          25% {
+              top: 0;
+              left: calc(var(--section-width) - var(--div-width));
+              transform: rotate(90deg);
+          }
+          50% {
+              top: calc(var(--section-height) - var(--div-height));
+              left: calc(var(--section-width) - var(--div-width));
+              transform: rotate(180deg);
+          }
+          75% {
+              top: calc(var(--section-height) - var(--div-height));
+              left: 0;
+              transform: rotate(270deg);
+          }
+          100% {
+              top: 0;
+              left: 0;
+              transform: rotate(360deg);
+          }
+      }
+
+      :root {
+          --section-width: 100vw;
+          --section-height: 100vh;
+          --div-width: 200px;
+          --div-height: 100px;
+      }
+
+      section {
+          position: relative;
+          width: var(--section-width);
+          height: var(--section-height);
+          overflow: hidden;
+      }
+
+      section > div {
+          position: absolute; /* Allows precise movement */
+          width: var(--div-width);
+          height: var(--div-height);
+          background: hotpink;
+          animation: round 8s linear infinite;
+          border-radius: 20px;
+      }
+
+  </style>
+</head>
+<body>
+  <section>
+    <div></div>
+  </section>
+</body>
+</html>
