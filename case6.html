@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Animation</title>
+
+    <meta name="author" content="Shamindu Kalugalage">
+    <meta name="keyword" content="html,css,javaScript">
+    <meta name="description" content="Portfolio,html css portfolio,html,css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/lib/normalize.css">
+    <link rel="stylesheet" href="/assets/lib/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background: #87CEEB;
+        }
+
+
+        #sky-image {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-image: url("assests/sky.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+
+        #city-image {
+            position: absolute;
+            width: 200vw;
+            height: 500px;
+            bottom: 260px;
+            background-image: url("assests/city.png");
+            background-size: cover;
+            background-repeat: repeat-x;
+            z-index: 2;
+            animation-name: moveCity;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+
+        #road-container {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 320px;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        #image-road {
+            position: absolute;
+            bottom: 0;
+            width: 200vw;
+            height: 265px;
+            background-image: url("assests/road.jpg");
+            background-size: cover;
+            background-repeat: repeat-x;
+            animation-name: moveRoad;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+
+        #image-car {
+            position: absolute;
+            top: 1px;
+            bottom: 150px;
+            left: 50%;
+            width: 400px;
+            height: 150px;
+            transform: translateX(-50%);
+            background-image: url("assests/car.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 4;
+        }
+
+
+        .wheel {
+            position: absolute;
+            bottom: 170px;
+            width: 70px;
+            aspect-ratio: 1/1;
+            background-image: url("assests/wheel.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation-name: rotateWheel;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        #image-tyre1 {
+            left: calc(50% - 170px);
+        }
+
+        #image-tyre2 {
+            left: calc(50% + 50px);
+        }
+
+        /* Animations */
+        @keyframes rotateWheel {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes moveRoad {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100vw); }
+        }
+
+        @keyframes moveCity {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100vw); }
+        }
+    </style>
+</head>
+<body>
+<div id="sky-image">
+    <div id="city-image"></div>
+    <div id="road-container">
+        <div id="image-road"></div>
+        <div id="image-car"></div>
+        <div id="image-tyre1" class="wheel"></div>
+        <div id="image-tyre2" class="wheel"></div>
+    </div>
+</div>
+</body>
+</html>
