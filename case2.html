@@ -4,67 +4,82 @@
     <meta charset="UTF-8">
     <title>case 2</title>
     <style>
-        body {
+        body{
+            background-color: blue;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #0052D4, #4364F7);
-            margin: 0;
         }
-
-        .progress-container {
-            position: relative;
-            width: 500px;
-            height: 500px;
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        .progress-ring {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(red 0deg, white 0deg);
-        }
-
-        .circle {
-            position: absolute;
-            width: 450px;
-            height: 450px;
-            background: gray;
+        #main-div{
+            width: 300px;
+            aspect-ratio: 1/1;
+            border: 10px solid white;
+            background-color: grey;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 25px;
-            font-weight: bold;
+            position: relative;
+            z-index: 9999;
+        }
+        h2{
+            font-size: 30px;
             color: white;
-            cursor: pointer;
+            font-weight: bolder;
+            text-align: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            transform: translate(225%);
+            z-index: 99999;
+        }
+        #quarter-circle{
+            width: 150px;
+            aspect-ratio: 1/1;
+            background-color: grey;
+            border: 10px solid red;
+            border-top-left-radius: 100%;
+            border-bottom: none;
+            border-right: none;
+            position: absolute;
+            z-index: 9999;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-100%, -100%);
+            bottom: 0;
+            right: 0;
         }
-
-        .circle:hover {
-            animation: progress-animation 2s linear forwards;
+        #main-div:hover{
+            animation-name: my-rotate;
+            animation-duration: 2s;
         }
-
-        @keyframes progress-animation {
-            from {
-                background: conic-gradient(red 0deg, white 0deg);
+        @keyframes my-rotate {
+            from{
+                transform: rotate(0deg);
             }
-            to {
-                background: conic-gradient(red 360deg, white 360deg);
+            to{
+                transform: rotate(360deg);
             }
         }
     </style>
 </head>
 <body>
-<div class="progress-container">
-    <div class="progress-ring"></div>
-    <div class="circle">RWAD</div>
-</div>
+<section>
+    <h2>RWAD</h2>
+    <div id="main-div">
+        <div id="quarter-circle"></div>
+    </div>
+</section>
 </body>
 </html>
